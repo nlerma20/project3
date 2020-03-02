@@ -11,7 +11,7 @@ total_requests = 0
 error_count = 0
 errors = []
 month_count = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0}
-day_count = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0}
+day_count = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0}
 fail_count = 0
 redirected_count = 0
 success_count = 0
@@ -32,7 +32,7 @@ for line in open_file:
         
         # Add to the day and month counters
         date = datetime.strptime(line_elements[1], "%d/%b/%Y")
-        day_count[date.weekday()] += 1
+        day_count[date.isoweekday()] += 1
         month_count[date.month] += 1
         
         # Check for specific month file, if one has been created add line to file otherwise create the file and write the line to the file
