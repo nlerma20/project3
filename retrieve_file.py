@@ -9,5 +9,5 @@ import os
 URL_PATH = 'https://s3.amazonaws.com/tcmg476/http_access_log'
 LOCAL_PATH = 'local_copy.log'
 
-local_file, headers = urlretrieve(URL_PATH, LOCAL_PATH)
+local_file, headers = urllib.request.urlretrieve(URL_PATH, LOCAL_PATH)
 
